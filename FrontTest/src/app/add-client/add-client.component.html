@@ -1,0 +1,46 @@
+  <form  [formGroup]=clientForm> <!--formGroup the f needs to be lowcase-->
+<div class="example-container">
+
+  <div formGroupName="emailGroup">
+      <div class="example-container">
+
+    <mat-form-field>
+    <input matInput placeholder="Enter your email" formControlName="email"(objClient.email)=value required>
+    <mat-error *ngIf="clientForm.controls.emailGroup.controls.email.invalid">invalid</mat-error>
+    </mat-form-field>
+    </div>
+    <div class="example-container">
+
+    <mat-form-field>
+        <input matInput placeholder="Confirm your email" formControlName="emailConfirm" required>
+        <mat-error *ngIf="clientForm.get('emailGroup.emailConfirm').invalid">invalid</mat-error>
+    
+     </mat-form-field>
+     </div>
+  </div>
+  <mat-form-field>
+    <input matInput placeholder="Enter your First Name" formControlName="firstName" (objClient.firstName)=value required >
+    <mat-error *ngIf="clientForm.controls.firstName.invalid">invalid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field> 
+    <input matInput placeholder="Enter your Last Name" formControlName="lastName" (objClient.lastName)=value required >
+    <mat-error *ngIf="clientForm.controls.lastName.invalid">invalid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Enter your City"formControlName="city" (objClient.city)=value required >
+    <mat-error *ngIf="clientForm.controls.city.invalid">invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Enter your Address"formControlName="address" (objClient.address)=value  required>
+    <mat-error *ngIf="clientForm.controls.address.invalid">invalid</mat-error>
+  </mat-form-field>
+  </div>
+</form>
+
+<div class="example-button-row">
+  <button mat-raised-button color="primary" (click)="btnClick();" >OK</button>
+  <button mat-raised-button color="accent">Delete</button>
+
+</div>

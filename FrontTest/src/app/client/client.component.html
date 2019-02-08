@@ -1,0 +1,52 @@
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="First Name">
+    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Last Name">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <!--ng-container matColumnDef="City">
+    <th mat-header-cell *matHeaderCellDef> City </th>
+    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+  </ng-container-->
+  
+  <ng-container matColumnDef="Gender">
+    <th mat-header-cell *matHeaderCellDef> Gender </th>
+    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+  </ng-container>
+  <ng-container matColumnDef="Command">
+    <th mat-header-cell *matHeaderCellDef> Command </th>
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="['/clients', element.id]"> Show </a> </td>
+  </ng-container>
+  <ng-container matColumnDef="Update">
+    <th mat-header-cell *matHeaderCellDef>Update  </th>
+    <td mat-cell *matCellDef="let element">  <button mat-stroked-button color="primary"  (click)="btnClick();">Edit</button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div class="example-button-row">
+  <button mat-raised-button color="primary" (click)="btnClick();">Add</button>
+
+</div>
