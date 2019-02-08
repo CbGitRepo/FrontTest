@@ -1,0 +1,34 @@
+[
+    {
+      "id":1,
+      "villeName":"Tunis",
+      "villePosittion": "North",
+      "villeWeather": "Warm",
+      "villeDescription": "The capitol",
+      "imageUrl": "./home-component/assets/images/Tunis.jpg"
+    },
+    {
+        "id":2,
+        "villeName":"Nabel",
+        "villePosittion": "North capbon",
+        "villeWeather": "Sunny",
+        "villeDescription": "Known by its beachs and yummy fruits",
+        "imageUrl": "./home-component/assets/images/nabel.jpg"
+    },
+    {
+        "id":3,
+        "villeName":"Bizert",
+        "villePosittion": "North also",
+        "villeWeather": "Sunny ",
+        "villeDescription": "Known by its calm ambiance and the old port",
+        "imageUrl": "./home-component/assets/images/bizert.jpg"
+    },
+    {
+        "id":4,
+        "villeName":"Jendouba",
+        "villePosittion": "North east",
+        "villeWeather": "Cold",
+        "villeDescription": "Known by its breathtaking forest",
+        "imageUrl": "./home-component/assets/images/Jendouba.jpg"
+    }
+  ]
