@@ -27,7 +27,7 @@ editClient(client:IClient,id:number): Observable<IClient>
   this.strUrl = this.baseUrl+'/'+id; 
 return this.http.put<IClient>(this.strUrl,client);
 }
-addClient(client:IClient,id:number): Observable<IClient>
+addClient(client:IClient): Observable<IClient>
 
 {
   this.strUrl = this.baseUrl;

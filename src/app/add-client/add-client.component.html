@@ -5,8 +5,8 @@
       <div class="example-container">
 
     <mat-form-field>
-    <input matInput placeholder="Enter your email" formControlName="email"(objClient.email)=value required>
-    <mat-error *ngIf="clientForm.controls.emailGroup.controls.email.invalid">invalid</mat-error>
+    <input matInput placeholder="Enter your email" formControlName="email" required>
+    <mat-error *ngIf="clientForm.controls.emailGroup.invalid">invalid</mat-error>
     </mat-form-field>
     </div>
     <div class="example-container">
@@ -19,21 +19,21 @@
      </div>
   </div>
   <mat-form-field>
-    <input matInput placeholder="Enter your First Name" formControlName="firstName" (objClient.firstName)=value required >
+    <input matInput placeholder="Enter your First Name" formControlName="firstName"  required >
     <mat-error *ngIf="clientForm.controls.firstName.invalid">invalid</mat-error>
   </mat-form-field>
 
   <mat-form-field> 
-    <input matInput placeholder="Enter your Last Name" formControlName="lastName" (objClient.lastName)=value required >
+    <input matInput placeholder="Enter your Last Name" formControlName="lastName"  required >
     <mat-error *ngIf="clientForm.controls.lastName.invalid">invalid</mat-error>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Enter your City"formControlName="city" (objClient.city)=value required >
+    <input matInput placeholder="Enter your City"formControlName="city"  required >
     <mat-error *ngIf="clientForm.controls.city.invalid">invalid</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Enter your Address"formControlName="address" (objClient.address)=value  required>
+    <input matInput placeholder="Enter your Address"formControlName="address"   required>
     <mat-error *ngIf="clientForm.controls.address.invalid">invalid</mat-error>
   </mat-form-field>
   </div>
