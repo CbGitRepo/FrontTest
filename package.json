@@ -25,6 +25,7 @@
     "ajv": "^6.9.1",
     "c": "^0.1.0",
     "core-js": "^2.6.4",
+    "latest": "^0.2.0",
     "rxjs": "~6.4.0",
     "zone.js": "~0.8.29"
   },
@@ -44,7 +45,6 @@
     "karma-coverage-istanbul-reporter": "~2.0.4",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
-    "node-sass": "^4.11.0",
     "protractor": "~5.4.2",
     "sass-loader": "^7.1.0",
     "ts-node": "~8.0.2",
