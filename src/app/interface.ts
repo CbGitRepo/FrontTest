@@ -12,6 +12,13 @@ export interface IClient {
   commandes?: ICammande[];
   
 }
+export interface IUser {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
 //Parameters needs to be camel case 
 export interface ICammande {
   id?: number;

@@ -8,10 +8,11 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { CommandDetailsComponent } from './command-details/command-details.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = 
 [
-{path:'home' ,component:ClientComponent},
+{path:'home' ,component:ClientComponent, canActivate:[AuthenticationGuard]},
 {path:'register' ,component:RegisterComponent},
 {path:'clients' ,component:ClientComponent},
 {path:'clients/:id' ,component:ClientDetailsComponent},

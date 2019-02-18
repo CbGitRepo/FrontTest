@@ -21,6 +21,7 @@ import {
 import { AddClientComponent } from './add-client/add-client.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthenticationGuard } from './authentication.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,7 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,BrowserAnimationsModule,MatButtonModule, // angular materials
     ReactiveFormsModule //for reactive forms
   ],
-  providers: [],
+  providers: [AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 

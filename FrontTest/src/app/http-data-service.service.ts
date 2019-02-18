@@ -4,6 +4,7 @@ import { Observable ,throwError } from 'rxjs';
 
 import { IClient ,ICammande, IProduct} from './interface';
 import { map, catchError } from 'rxjs/operators';
+import { IUser } from 'src/app/interface';
 const headers= new HttpHeaders().set("Access-Control-Allow-Origin","*");
 
 @Injectable({
@@ -11,6 +12,7 @@ const headers= new HttpHeaders().set("Access-Control-Allow-Origin","*");
 })
 export class HttpDataServiceService {
   baseUrl: string = 'http://localhost:8088/api/clients';
+  userBaseUrl:string = 'http://localhost:8088/api/users';
   strUrl:string;
   constructor(private http: HttpClient)
   {
@@ -32,6 +34,13 @@ addClient(client:IClient,id:number): Observable<IClient>
 {
   this.strUrl = this.baseUrl;
   return this.http.post<IClient>(this.strUrl,client,{headers});
+
+}
+addUser(user:IUser,): Observable<IClient>
+
+{
+  this.strUrl = this.userBaseUrl;
+  return this.http.post<IClient>(this.strUrl,user,{headers});
 
 }
   /*

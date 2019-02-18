@@ -16,7 +16,10 @@ export class HttpDataServiceService {
   {
 
   }
-
+  loggedIn():boolean{
+    return !!localStorage.getItem("token"); // !! converts string to bolean 
+    }
+    
 getClients(): Observable<IClient[]> 
   {
     return this.http.get<IClient[]>(this.baseUrl);
@@ -75,4 +78,5 @@ addClient(client:IClient): Observable<IClient>
     
     return throwError(errorMessage);
   }
+
 }

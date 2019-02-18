@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder , FormGroup,Validators, AbstractControl } from '@angular/forms';
+import { IUser } from '../interface';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpDataServiceService } from 'FrontTest/src/app/http-data-service.service';
 
 function passwordConfirmationValidator(c:AbstractControl):{[key:string]:boolean}|null // if null is returned the validator is valid
 {
@@ -19,8 +22,8 @@ return {'match':true};
 
 export class RegisterComponent implements OnInit {
 userForm : FormGroup
-  constructor(private formBuilder : FormBuilder) { }
-
+objUser: IUser
+  constructor(private formBuilder : FormBuilder,private route:Router,private dataService:HttpDataServiceService) { }
   ngOnInit() {
   
   this.userForm= this.formBuilder.group(
@@ -34,6 +37,17 @@ userForm : FormGroup
         },{validator: passwordConfirmationValidator}),
   });
 
+  }
+  btnClick()
+  {
+    const user ={...this.objUser,...this.userForm.value}; //copy the 
+    console.warn(user);  
+    if (this.userForm.dirty)
+    {
+      this.dataService.addUser(user).subscribe(
+        () =>{this.route.navigate(['/clients'])},
+        err=> console.warn(err));
+    }
   }
 
 }
