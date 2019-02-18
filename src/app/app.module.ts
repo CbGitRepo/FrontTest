@@ -19,6 +19,8 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { AddClientComponent } from './add-client/add-client.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,8 @@ import { AddClientComponent } from './add-client/add-client.component';
     ClientDetailsComponent,
     CommandDetailsComponent,
     AddClientComponent,
+    LoginComponent,
+    RegisterComponent,
 
 
   ],

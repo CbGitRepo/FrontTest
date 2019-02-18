@@ -31,7 +31,7 @@ export class AddClientComponent implements OnInit {
   constructor( private dataService: HttpDataServiceService, private formBuilder : FormBuilder,private route: ActivatedRoute,private router: Router) { }
   
   ngOnInit() {
-    this.bFinish=false;
+   this.bFinish=false;
    this.clientForm=this.formBuilder.group(
      {
       firstName: ['',[Validators.required,Validators.minLength(2)]],
@@ -39,7 +39,6 @@ export class AddClientComponent implements OnInit {
       emailGroup:this.formBuilder.group({
         email: ['',[Validators.required,Validators.email]],
         emailConfirm: ['',[Validators.required,Validators.email]],
-  
       },{validator: emailConfirmationVAlidator}),
       address: ['',[Validators.required,Validators.minLength(2)]],
       city: ['',[Validators.required,Validators.minLength(2)]],

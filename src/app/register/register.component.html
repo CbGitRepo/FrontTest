@@ -1,0 +1,36 @@
+<form  [formGroup]=userForm> <!--formGroup the f needs to be lowcase-->
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Enter your First Name" formControlName="firstName"  required >
+      <mat-error *ngIf="userForm.controls.firstName.invalid">invalid</mat-error>
+    </mat-form-field>
+    <mat-form-field> 
+      <input matInput placeholder="Enter your Last Name" formControlName="lastName"  required >
+      <mat-error *ngIf="userForm.controls.lastName.invalid">invalid</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+      <input matInput placeholder="Enter your email" formControlName="email" required>
+      <mat-error *ngIf="userForm.controls.email.invalid">invalid</mat-error>
+      </mat-form-field>
+      <div formGroupName="checkPasswords">
+        <div class="example-container">
+      <mat-form-field>
+      <input matInput placeholder="Enter your password" formControlName="pass" type="password" required>
+      <mat-error *ngIf="userForm.get('checkPasswords.confirmPass').invalid">invalid</mat-error>
+      </mat-form-field>
+      </div>
+      <div class="example-container">
+  
+      <mat-form-field>
+          <input matInput placeholder="Confirm your password" formControlName="confirmPass" type="password" required>
+          <mat-error *ngIf="userForm.controls.checkPasswords.invalid">invalid</mat-error>
+      
+       </mat-form-field>
+       </div>
+    </div>
+  
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="btnClick();" >Register</button>
+    <button mat-raised-button color="accent">Cancel</button>
+  
+  </div>

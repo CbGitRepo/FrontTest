@@ -7,17 +7,18 @@ import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { CommandDetailsComponent } from './command-details/command-details.component';
 import { AddClientComponent } from './add-client/add-client.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = 
 [
 {path:'home' ,component:ClientComponent},
+{path:'register' ,component:RegisterComponent},
 {path:'clients' ,component:ClientComponent},
 {path:'clients/:id' ,component:ClientDetailsComponent},
 {path:'clients/:idClient/:id' ,component:CommandDetailsComponent},
 {path:'about' ,component:AboutComponent},
 {path:'contact' ,component:ContactComponent},
 {path:'Update/:id' ,component:AddClientComponent},
-
 {path:'' ,component:ClientComponent},
 {path:'**' ,component:ClientComponent},
 
