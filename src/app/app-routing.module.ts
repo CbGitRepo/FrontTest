@@ -9,11 +9,13 @@ import { CommandDetailsComponent } from './command-details/command-details.compo
 import { AddClientComponent } from './add-client/add-client.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = 
 [
 {path:'home' ,component:ClientComponent, canActivate:[AuthenticationGuard]},
 {path:'register' ,component:RegisterComponent},
+{path:'login' ,component:LoginComponent},
 {path:'clients' ,component:ClientComponent},
 {path:'clients/:id' ,component:ClientDetailsComponent},
 {path:'clients/:idClient/:id' ,component:CommandDetailsComponent},

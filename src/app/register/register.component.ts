@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder , FormGroup,Validators, AbstractControl } from '@angular/forms';
 import { IUser } from '../interface';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpDataServiceService } from 'FrontTest/src/app/http-data-service.service';
+import { HttpDataServiceService } from '../http-data-service.service';
 
 function passwordConfirmationValidator(c:AbstractControl):{[key:string]:boolean}|null // if null is returned the validator is valid
 {

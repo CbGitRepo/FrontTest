@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable ,throwError } from 'rxjs';
 
-import { IClient ,ICammande, IProduct} from './interface';
+import { IClient ,ICammande, IProduct, IUser} from './interface';
 import { map, catchError } from 'rxjs/operators';
 const headers= new HttpHeaders().set("Access-Control-Allow-Origin","*");
 
@@ -11,6 +11,8 @@ const headers= new HttpHeaders().set("Access-Control-Allow-Origin","*");
 })
 export class HttpDataServiceService {
   baseUrl: string = 'http://localhost:8088/api/clients';
+  userBaseUrl:string = 'http://localhost:8088/register';
+loginUrl:string = 'http://localhost:8088/login';
   strUrl:string;
   constructor(private http: HttpClient)
   {
@@ -19,7 +21,11 @@ export class HttpDataServiceService {
   loggedIn():boolean{
     return !!localStorage.getItem("token"); // !! converts string to bolean 
     }
-    
+    logIn(user:IUser):Observable<IUser>{
+
+      this.strUrl=this.loginUrl;
+      return this.http.post<IUser>(this.strUrl,user);
+    }
 getClients(): Observable<IClient[]> 
   {
     return this.http.get<IClient[]>(this.baseUrl);
@@ -51,10 +57,20 @@ addClient(client:IClient): Observable<IClient>
       map((clients: IClient[]) => clients.find(c => c.id == Id)));
    
   }*/
-  getClient(Id: number): Observable<ICammande[]> {
+  addUser(user:IUser): Observable<IUser>
+
+{
+  this.strUrl = this.userBaseUrl;
+  return this.http.post<IUser>(this.strUrl,user);
+
+}
+
+  getClient(Id: number): Observable<ICammande[]> 
+{
     this.strUrl = this.baseUrl+'/'+Id; 
     console.warn(this.strUrl);
-  return this.http.get<ICammande[]>(this.strUrl);}
+  return this.http.get<ICammande[]>(this.strUrl);
+}
 
 
   getProduct(IdClient: number, idCOmmand: number): Observable<IProduct[]> {

@@ -18,6 +18,7 @@ export interface IUser {
   lastName: string;
   email: string;
   password: string;
+  token:string;
 }
 //Parameters needs to be camel case 
 export interface ICammande {

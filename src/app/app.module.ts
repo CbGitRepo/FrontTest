@@ -16,7 +16,9 @@ import { MatTableModule } from '@angular/material/table';
 import {
   MatFormFieldModule,
   MatInputModule,
-  MatButtonModule
+  MatButtonModule,
+  MatCardModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { AddClientComponent } from './add-client/add-client.component';
 import { LoginComponent } from './login/login.component';
@@ -44,7 +46,7 @@ import { AuthenticationGuard } from './authentication.guard';
     FormsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule,BrowserAnimationsModule,MatButtonModule, // angular materials
+    MatInputModule,BrowserAnimationsModule,MatButtonModule,MatCardModule ,MatProgressSpinnerModule,// angular materials
     ReactiveFormsModule //for reactive forms
   ],
   providers: [AuthenticationGuard],

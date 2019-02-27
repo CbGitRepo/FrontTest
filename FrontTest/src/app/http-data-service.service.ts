@@ -10,9 +10,9 @@ const headers= new HttpHeaders().set("Access-Control-Allow-Origin","*");
 @Injectable({
   providedIn: 'root'
 })
-export class HttpDataServiceService {
+export class dddHttpDataServiceService {
   baseUrl: string = 'http://localhost:8088/api/clients';
-  userBaseUrl:string = 'http://localhost:8088/api/users';
+  userBaseUrl:string = 'http://localhost:8088/register';
   strUrl:string;
   constructor(private http: HttpClient)
   {
@@ -36,11 +36,11 @@ addClient(client:IClient,id:number): Observable<IClient>
   return this.http.post<IClient>(this.strUrl,client,{headers});
 
 }
-addUser(user:IUser,): Observable<IClient>
+addUser(user:IUser): Observable<IUser>
 
 {
   this.strUrl = this.userBaseUrl;
-  return this.http.post<IClient>(this.strUrl,user,{headers});
+  return this.http.post<IUser>(this.strUrl,user);
 
 }
   /*
